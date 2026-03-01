@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People At Zero</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0f0f0f;
+    color: white;
+    line-height: 1.6;
+}
+
+/* ===== NEW HEADER LAYOUT ===== */
+
+header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+    background-color: #0f0f0f;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cover {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.cover img {
+    width: 400px;
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.band-title {
+    flex: 1;
+    text-align: right;
+}
+
+.band-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .band-title {
+        text-align: center;
+        margin-top: 40px;
+    }
+}
+
+/* ===== SECTIONS ===== */
+
+section {
+    padding: 80px 10%;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.bio {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    font-weight: 300;
+}
+
+/* ===== GALLERY ===== */
+
+.gallery {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.member {
+    flex: 1;
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.member:hover {
+    transform: translateY(-8px);
+}
+
+.member h3 {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.member img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.member p {
+    font-weight: 300;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+    .gallery {
+        flex-direction: column;
+    }
+}
+
+/* ===== VIDEOS ===== */
+
+.videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #1a1a1a;
+}
+
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #ff004c;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #ff3366;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+
+        <div class="cover">
+            <!-- Replace this image with your actual cover -->
+            <img src="Paz.jpeg" alt="Band Cover">
+        </div>
+
+        <div class="band-title">
+            <h1>PEOPLE AT ZERO</h1>
+        </div>
+
+    </div>
+</header>
+
+<section>
+    <h2>About Us</h2>
+    <div class="bio">
+        <p>
+        People At Zero is a three-piece band blending Blues Rock, Reggae, and Jazz into a powerful, groove-driven sound. 
+        Built on the raw foundation of guitar, bass, and drums, the trio delivers tight musicianship and undeniable chemistry.
+        All music is original, with serious, thought-provoking lyrics written by guitarist Don — songs that make you dance, 
+        listen, and think. Though the lineup has evolved over time, the spirit and vision of the band remain unchanged — 
+        authentic, message-driven music rooted in rhythm, soul, and depth.
+        </p>
+
+        <a href="#" class="btn">Listen Now</a>
+    </div>
+</section>
+
+<section>
+    <h2>Band Members</h2>
+    <div class="gallery">
+
+        <div class="member">
+            <h3>Don – Guitar & Vocals</h3>
+            <img src="DonPic.jpeg" alt="Don Guitarist">
+            <p>
+                Founder and main songwriter. Don crafts powerful lyrics and blues-driven riffs 
+                that define the band’s emotional and musical direction.
+            </p>
+        </div>
+
+        <div class="member">
+            <h3>Jamie – Bass</h3>
+            <img src="JamiePic.jpeg" alt="Bass Player">
+            <p>
+                The groove architect. Jamie blends reggae bounce with jazz-influenced bass lines 
+                that give the band its deep rhythmic foundation.
+            </p>
+        </div>
+
+        <div class="member">
+            <h3>Honore – Drums</h3>
+            <img src="HonorePic.jpeg" alt="Drummer">
+            <p>
+                Driving the heartbeat of the band, Honore combines tight rock energy with subtle 
+                jazz textures and dynamic stage presence.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2>Videos</h2>
+    <div class="videos">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" allowfullscreen></iframe>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 People At Zero | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

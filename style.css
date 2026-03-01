@@ -1,0 +1,212 @@
+/* =========================
+   PEOPLE AT ZERO - STYLE
+   ========================= */
+
+/* ---- Root Colors ---- */
+:root {
+  --black: #0a0a0a;
+  --dark: #121212;
+  --blue: #0077ff;
+  --blue-glow: #00aaff;
+  --yellow: #ffd60a;
+  --white: #ffffff;
+  --gray: #aaaaaa;
+}
+
+/* ---- Global Reset ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+              url('your-hero-image.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--white);
+  text-shadow:
+    0 0 10px var(--blue),
+    0 0 30px var(--blue-glow);
+  animation: glowPulse 3s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from { text-shadow: 0 0 10px var(--blue); }
+  to { text-shadow: 0 0 25px var(--blue-glow); }
+}
+
+/* ================= SECTION BASE ================= */
+
+section {
+  padding: 100px 10%;
+  background: var(--dark);
+}
+
+section:nth-child(even) {
+  background: #0f0f0f;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+  color: var(--white);
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: 15px auto 0;
+  background: var(--yellow);
+  border-radius: 5px;
+}
+
+/* ================= ABOUT SECTION ================= */
+
+.about p {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  color: var(--gray);
+  font-size: 1.1rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 35px;
+  background: var(--blue);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--yellow);
+  color: var(--black);
+  box-shadow: 0 0 15px var(--yellow);
+}
+
+/* ================= GALLERY ================= */
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+}
+
+.member {
+    flex: 1; /* Makes all 3 equal width */
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.member:hover {
+    transform: translateY(-8px);
+}
+
+.member h3 {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.member img {
+    width: 100%;
+    height: 300px; /* Force same height */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.member p {
+    font-weight: 300;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+/* ================= VIDEOS ================= */
+
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+iframe {
+  width: 100%;
+  height: 280px;
+  border-radius: 12px;
+  border: 2px solid var(--blue);
+  transition: 0.3s ease;
+}
+
+iframe:hover {
+  box-shadow: 0 0 20px var(--blue-glow);
+  transform: scale(1.02);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  background: #000;
+  padding: 40px;
+  text-align: center;
+}
+
+footer p {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--yellow);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-shadow: 0 0 8px var(--yellow);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+  }
+
+  section {
+    padding: 70px 6%;
+  }
+}
