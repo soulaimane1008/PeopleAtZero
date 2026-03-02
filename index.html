@@ -7,6 +7,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
+<script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.min.js"></script>
+
 <style>
 * {
     margin: 0;
@@ -21,7 +23,7 @@ body {
     line-height: 1.6;
 }
 
-/* ===== NEW HEADER LAYOUT ===== */
+/* ===== HEADER ===== */
 
 header {
     height: 100vh;
@@ -64,7 +66,6 @@ header {
     letter-spacing: 3px;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
     .header-container {
         flex-direction: column;
@@ -94,6 +95,38 @@ h2 {
     margin: auto;
     text-align: center;
     font-weight: 300;
+}
+
+/* ===== WAVEFORM PLAYER ===== */
+
+.music-player {
+    margin-top: 50px;
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 40px rgba(0, 119, 255, 0.15);
+}
+
+#waveform {
+    margin-bottom: 20px;
+}
+
+#playBtn {
+    background: #ffd700;
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+#playBtn:hover {
+    background: #ffcc00;
 }
 
 /* ===== GALLERY ===== */
@@ -193,7 +226,6 @@ footer p {
     <div class="header-container">
 
         <div class="cover">
-            <!-- Replace this image with your actual cover -->
             <img src="Paz.jpeg" alt="Band Cover">
         </div>
 
@@ -211,11 +243,13 @@ footer p {
         People At Zero is a three-piece band blending Blues Rock, Reggae, and Jazz into a powerful, groove-driven sound. 
         Built on the raw foundation of guitar, bass, and drums, the trio delivers tight musicianship and undeniable chemistry.
         All music is original, with serious, thought-provoking lyrics written by guitarist Don — songs that make you dance, 
-        listen, and think. Though the lineup has evolved over time, the spirit and vision of the band remain unchanged — 
-        authentic, message-driven music rooted in rhythm, soul, and depth.
+        listen, and think.
         </p>
 
-        <a href="#" class="btn">Listen Now</a>
+        <div class="music-player">
+            <div id="waveform"></div>
+            <button id="playBtn">▶ Play Preview</button>
+        </div>
     </div>
 </section>
 
@@ -225,29 +259,20 @@ footer p {
 
         <div class="member">
             <h3>Don – Guitar & Vocals</h3>
-            <img src="DonPic.jpeg" alt="Don Guitarist">
-            <p>
-                Founder and main songwriter. Don crafts powerful lyrics and blues-driven riffs 
-                that define the band’s emotional and musical direction.
-            </p>
+            <img src="DonPic.jpeg">
+            <p>Founder and main songwriter. Don crafts powerful lyrics and blues-driven riffs.</p>
         </div>
 
         <div class="member">
             <h3>Jamie – Bass</h3>
-            <img src="JamiePic.jpeg" alt="Bass Player">
-            <p>
-                The groove architect. Jamie blends reggae bounce with jazz-influenced bass lines 
-                that give the band its deep rhythmic foundation.
-            </p>
+            <img src="JamiePic.jpeg">
+            <p>The groove architect blending reggae bounce with jazz-influenced bass lines.</p>
         </div>
 
         <div class="member">
             <h3>Honore – Drums</h3>
-            <img src="HonorePic.jpeg" alt="Drummer">
-            <p>
-                Driving the heartbeat of the band, Honore combines tight rock energy with subtle 
-                jazz textures and dynamic stage presence.
-            </p>
+            <img src="HonorePic.jpeg">
+            <p>Driving the heartbeat with tight rock energy and subtle jazz textures.</p>
         </div>
 
     </div>
@@ -264,6 +289,27 @@ footer p {
 <footer>
     <p>© 2026 People At Zero | All Rights Reserved</p>
 </footer>
+
+<script>
+const wavesurfer = WaveSurfer.create({
+  container: '#waveform',
+  waveColor: '#1e90ff',
+  progressColor: '#ffd700',
+  height: 90,
+  barWidth: 3,
+  barGap: 2,
+  responsive: true
+});
+
+wavesurfer.load('Audio/Rumors (Preview).mp3'); // <-- put your audio file path here
+
+const playBtn = document.getElementById('playBtn');
+
+playBtn.addEventListener('click', () => {
+  wavesurfer.playPause();
+  playBtn.textContent = wavesurfer.isPlaying() ? '⏸ Pause' : '▶ Play Preview';
+});
+</script>
 
 </body>
 </html>
