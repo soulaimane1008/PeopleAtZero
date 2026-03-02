@@ -236,21 +236,35 @@ h2::after {
 
 /* ================= VIDEOS ================= */
 
+/* ================= VIDEOS ================= */
+
 .videos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
 }
 
-iframe {
+/* Video wrapper keeps ratio */
+.video-wrapper {
+  position: relative;
   width: 100%;
-  height: 280px;
+  padding-top: 177.77%; /* 9:16 ratio for Shorts */
   border-radius: 12px;
+  overflow: hidden;
   border: 2px solid var(--blue);
   transition: 0.3s ease;
 }
 
-iframe:hover {
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-wrapper:hover {
   box-shadow: 0 0 20px var(--blue-glow);
   transform: scale(1.02);
 }
@@ -284,4 +298,5 @@ footer p {
     flex-direction: column;
   }
 }
+
 
