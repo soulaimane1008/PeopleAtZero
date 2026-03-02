@@ -282,9 +282,25 @@ footer p {
 
 <section>
     <h2>Videos</h2>
+
     <div class="videos">
-        <iframe src="https://www.youtube.com/shorts/MY2cGgNpQhc" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/shorts/1QUBhUkz7RI" allowfullscreen></iframe>
+        <div class="video-wrapper">
+            <iframe 
+                src="https://www.youtube.com/embed/MY2cGgNpQhc"
+                title="YouTube video player"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="video-wrapper">
+            <iframe 
+                src="https://www.youtube.com/embed/1QUBhUkz7RI"
+                title="YouTube video player"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
 </section>
     
@@ -333,5 +349,6 @@ playBtn.addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
